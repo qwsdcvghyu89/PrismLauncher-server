@@ -5,9 +5,14 @@ This repository contains a command line interface for searching and downloading 
 ## Building
 
 ```bash
+git submodule update --init --recursive
 cmake -S . -B build
 cmake --build build
 ```
+
+Qt 6 and its development components must be installed for the build to
+succeed. Extra CMake Modules (ECM) will be pulled from the repository via the
+submodule update step above.
 
 The resulting executable is `${Launcher_Name}_modpack` when using the provided build configuration.
 

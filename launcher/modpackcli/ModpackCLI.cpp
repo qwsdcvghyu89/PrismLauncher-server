@@ -9,6 +9,8 @@
 #include <QJsonObject>
 #include <QUrl>
 #include <QUrlQuery>
+#include <QNetworkReply>
+#include <QNetworkRequest>
 #include <iostream>
 
 namespace {
