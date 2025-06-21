@@ -165,7 +165,10 @@ find_package(ECM QUIET NO_MODULE)
 if(NOT ECM_FOUND)
     if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/libraries/extra-cmake-modules/CMakeLists.txt")
         message(STATUS "Using bundled ECM")
-        set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/libraries/extra-cmake-modules/modules;${CMAKE_MODULE_PATH}")
+        list(APPEND CMAKE_MODULE_PATH
+            "${CMAKE_CURRENT_SOURCE_DIR}/libraries/extra-cmake-modules/modules"
+            "${CMAKE_CURRENT_SOURCE_DIR}/libraries/extra-cmake-modules/kde-modules")
+        find_package(ECM REQUIRED NO_MODULE)
     else()
         message(FATAL_ERROR
             " Could not find ECM\n \n"

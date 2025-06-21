@@ -1,5 +1,5 @@
 #include "ModpackCLI.h"
-#include "buildconfig/BuildConfig.h"
+#include "BuildConfig.h"
 
 #include <QDir>
 #include <QEventLoop>
@@ -18,6 +18,7 @@ namespace {
 template <typename F>
 struct FinalAction {
     F f;
+    explicit FinalAction(F func) : f(std::move(func)) {}
     ~FinalAction() { f(); }
 };
 }  // namespace

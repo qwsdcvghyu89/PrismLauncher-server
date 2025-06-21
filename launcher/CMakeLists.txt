@@ -1505,9 +1505,9 @@ if (UNIX AND APPLE AND Launcher_ENABLE_UPDATER)
 endif()
 
 #### The bundle mess! ####
-#Bundle utilities are used to complete the portable packages - \
-    they add all the libraries that would otherwise be missing on the target system.
-#NOTE : it seems that this absolutely has to be here, and nowhere else.
+# Bundle utilities are used to complete the portable packages - they add all the
+# libraries that would otherwise be missing on the target system.
+# NOTE: it seems that this absolutely has to be here, and nowhere else.
 if(INSTALL_BUNDLE STREQUAL "full")
 #Add qt.conf - this makes Qt stop looking for things outside the bundle
     install(
