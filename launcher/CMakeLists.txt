@@ -5,7 +5,7 @@ project(application)
 ######## Sources and headers ########
 
 set(CORE_SOURCES
-    # LOGIC - Base classes and infrastructure
+#LOGIC - Base classes and infrastructure
     BaseInstaller.h
     BaseInstaller.cpp
     BaseVersionList.h
@@ -34,7 +34,7 @@ set(CORE_SOURCES
     RuntimeContext.h
     PSaveFile.h
 
-    # Basic instance manipulation tasks (derived from InstanceTask)
+#Basic instance manipulation tasks(derived from InstanceTask)
     InstanceCreationTask.h
     InstanceCreationTask.cpp
     InstanceCopyPrefs.h
@@ -44,21 +44,21 @@ set(CORE_SOURCES
     InstanceImportTask.h
     InstanceImportTask.cpp
 
-    # Resource downloading task
+#Resource downloading task
     ResourceDownloadTask.h
     ResourceDownloadTask.cpp
 
-    # Use tracking separate from memory management
+#Use tracking separate from memory management
     Usable.h
 
-    # Prefix tree where node names are strings between separators
+#Prefix tree where node names are strings between separators
     SeparatorPrefixTree.h
 
-    # String filters
+#String filters
     Filter.h
     Filter.cpp
 
-    # JSON parsing helpers
+#JSON parsing helpers
     Json.h
     Json.cpp
 
@@ -67,32 +67,32 @@ set(CORE_SOURCES
 
     Exception.h
 
-    # RW lock protected map
+#RW lock protected map
     RWStorage.h
 
-    # A variable that has an implicit default value and keeps track of changes
+#A variable that has an implicit default value and keeps track of changes
     DefaultVariable.h
 
-    # a smart pointer wrapper intended for safer use with Qt signal/slot mechanisms
+#a smart pointer wrapper intended for safer use with Qt signal / slot mechanisms
     QObjectPtr.h
 
-    # Compression support
+#Compression support
     GZip.h
     GZip.cpp
 
-    # Command line parameter parsing
+#Command line parameter parsing
     Commandline.h
     Commandline.cpp
 
-    # Version number string support
+#Version number string support
     Version.h
     Version.cpp
 
-    # A Recursive file system watcher
+#A Recursive file system watcher
     RecursiveFileSystemWatcher.h
     RecursiveFileSystemWatcher.cpp
 
-    # Time
+#Time
     MMCTime.h
     MMCTime.cpp
 
@@ -102,14 +102,14 @@ if (UNIX AND NOT CYGWIN AND NOT APPLE)
     set(CORE_SOURCES
     ${CORE_SOURCES}
 
-    # MangoHud
+#MangoHud
     MangoHud.h
     MangoHud.cpp
     )
 endif()
 
 set(PATHMATCHER_SOURCES
-    # Path matchers
+#Path matchers
     pathmatcher/FSTreeMatcher.h
     pathmatcher/IPathMatcher.h
     pathmatcher/MultiMatcher.h
@@ -118,7 +118,7 @@ set(PATHMATCHER_SOURCES
 )
 
 set(NET_SOURCES
-    # network stuffs
+#network stuffs
     net/ByteArraySink.h
     net/ChecksumValidator.h
     net/Download.cpp
@@ -151,7 +151,7 @@ set(NET_SOURCES
     net/NetRequest.h
 )
 
-# Game launch logic
+#Game launch logic
 set(LAUNCH_SOURCES
     launch/steps/CheckJava.cpp
     launch/steps/CheckJava.h
@@ -179,7 +179,7 @@ set(LAUNCH_SOURCES
     logs/LogParser.h
 )
 
-# Old update system
+#Old update system
 set(UPDATE_SOURCES
     updater/ExternalUpdater.h
 )
@@ -194,30 +194,30 @@ set(PRISM_UPDATE_SOURCES
     updater/PrismExternalUpdater.cpp
 )
 
-# Backend for the news bar... there's usually no news.
+#Backend for the news bar... there's usually no news.
 set(NEWS_SOURCES
-    # News System
+#News System
     news/NewsChecker.h
     news/NewsChecker.cpp
     news/NewsEntry.h
     news/NewsEntry.cpp
 )
 
-# Icon interface
+#Icon interface
 set(ICONS_SOURCES
-    # Icons System and related code
+#Icons System and related code
     icons/IconUtils.h
     icons/IconUtils.cpp
 )
 
-# Support for Minecraft instances and launch
+#Support for Minecraft instances and launch
 set(MINECRAFT_SOURCES
 
-    # Logging
+#Logging
     minecraft/Logging.h
     minecraft/Logging.cpp
 
-    # Minecraft support
+#Minecraft support
     minecraft/auth/AccountData.cpp
     minecraft/auth/AccountData.h
     minecraft/auth/AccountList.cpp
@@ -372,11 +372,11 @@ set(MINECRAFT_SOURCES
     minecraft/mod/tasks/GetModDependenciesTask.h
     minecraft/mod/tasks/GetModDependenciesTask.cpp
 
-    # Assets
+#Assets
     minecraft/AssetsUtils.h
     minecraft/AssetsUtils.cpp
 
-    # Minecraft skins
+#Minecraft skins
     minecraft/skins/CapeChange.cpp
     minecraft/skins/CapeChange.h
     minecraft/skins/SkinUpload.cpp
@@ -390,7 +390,7 @@ set(MINECRAFT_SOURCES
 
     minecraft/Agent.h)
 
-# the screenshots feature
+#the screenshots feature
 set(SCREENSHOTS_SOURCES
     screenshots/Screenshot.h
     screenshots/ImgurUpload.h
@@ -400,7 +400,7 @@ set(SCREENSHOTS_SOURCES
 )
 
 set(TASKS_SOURCES
-    # Tasks
+#Tasks
     tasks/Task.h
     tasks/Task.cpp
     tasks/ConcurrentTask.h
@@ -412,7 +412,7 @@ set(TASKS_SOURCES
 )
 
 set(SETTINGS_SOURCES
-    # Settings
+#Settings
     settings/INIFile.cpp
     settings/INIFile.h
     settings/INISettingsObject.cpp
@@ -462,7 +462,7 @@ set(TRANSLATIONS_SOURCES
 )
 
 set(TOOLS_SOURCES
-    # Tools
+#Tools
     tools/BaseExternalTool.cpp
     tools/BaseExternalTool.h
     tools/BaseProfiler.cpp
@@ -478,7 +478,7 @@ set(TOOLS_SOURCES
 )
 
 set(META_SOURCES
-    # Metadata sources
+#Metadata sources
     meta/JsonFormat.cpp
     meta/JsonFormat.h
     meta/BaseEntity.cpp
@@ -534,7 +534,7 @@ set(FTB_SOURCES
 )
 
 set(FLAME_SOURCES
-    # Flame
+#Flame
     modplatform/flame/FlamePackIndex.cpp
     modplatform/flame/FlamePackIndex.h
     modplatform/flame/FlameModIndex.cpp
@@ -628,11 +628,11 @@ set(PRISMUPDATER_SOURCES
     Markdown.h
     Markdown.cpp
 
-    # Zip
+#Zip
     MMCZip.h
     MMCZip.cpp
 
-    # Time
+#Time
     MMCTime.h
     MMCTime.cpp
 
@@ -661,6 +661,11 @@ set(PRISMUPDATER_SOURCES
     ui/widgets/SubTaskProgressBar.h
     ui/widgets/SubTaskProgressBar.cpp
 
+)
+
+set(MODPACKCLI_SOURCES
+    modpackcli/ModpackCLI.h
+    modpackcli/ModpackCLI.cpp
 )
 
 if(WIN32)
@@ -788,7 +793,7 @@ else()
 endif()
 
 SET(LAUNCHER_SOURCES
-    # Application base
+#Application base
     Application.h
     Application.cpp
     DataMigrationTask.h
@@ -798,10 +803,10 @@ SET(LAUNCHER_SOURCES
     SysInfo.h
     SysInfo.cpp
 
-    # console utils
+#console utils
     console/Console.h
 
-    # GUI - general utilities
+#GUI - general utilities
     DesktopServices.h
     DesktopServices.cpp
     VersionProxyModel.h
@@ -809,11 +814,11 @@ SET(LAUNCHER_SOURCES
     Markdown.h
     Markdown.cpp
 
-    # Super secret!
+#Super secret !
     KonamiCode.h
     KonamiCode.cpp
 
-    # Bundled resources
+#Bundled resources
     resources/backgrounds/backgrounds.qrc
     resources/multimc/multimc.qrc
     resources/pe_dark/pe_dark.qrc
@@ -830,17 +835,17 @@ SET(LAUNCHER_SOURCES
     resources/shaders/shaders.qrc
     "${CMAKE_CURRENT_BINARY_DIR}/../${Launcher_Branding_LogoQRC}"
 
-    # Icons
+#Icons
     icons/MMCIcon.h
     icons/MMCIcon.cpp
     icons/IconList.h
     icons/IconList.cpp
 
-    # log utils
+#log utils
     logs/AnonymizeLog.cpp
     logs/AnonymizeLog.h
 
-    # GUI - windows
+#GUI - windows
     ui/GuiUtil.h
     ui/GuiUtil.cpp
     ui/MainWindow.h
@@ -850,13 +855,13 @@ SET(LAUNCHER_SOURCES
     ui/ViewLogWindow.h
     ui/ViewLogWindow.cpp
 
-    # FIXME: maybe find a better home for this.
+#FIXME : maybe find a better home for this.
     FileIgnoreProxy.cpp
     FileIgnoreProxy.h
     FastFileIconProvider.cpp
     FastFileIconProvider.h
 
-    # GUI - setup wizard
+#GUI - setup wizard
     ui/setupwizard/SetupWizard.h
     ui/setupwizard/SetupWizard.cpp
     ui/setupwizard/BaseWizardPage.h
@@ -872,7 +877,7 @@ SET(LAUNCHER_SOURCES
     ui/setupwizard/LoginWizardPage.cpp
     ui/setupwizard/LoginWizardPage.h
 
-    # GUI - themes
+#GUI - themes
     ui/themes/FusionTheme.cpp
     ui/themes/FusionTheme.h
     ui/themes/BrightTheme.cpp
@@ -896,23 +901,23 @@ SET(LAUNCHER_SOURCES
     ui/themes/CatPainter.cpp
     ui/themes/CatPainter.h
 
-    # Processes
+#Processes
     LaunchController.h
     LaunchController.cpp
 
-    # page provider for instances
+#page provider for instances
     InstancePageProvider.h
 
-    # Common java checking UI
+#Common java checking UI
     JavaCommon.h
     JavaCommon.cpp
 
-    # GUI - paged dialog base
+#GUI - paged dialog base
     ui/pages/BasePage.h
     ui/pages/BasePageContainer.h
     ui/pages/BasePageProvider.h
 
-    # GUI - instance pages
+#GUI - instance pages
     ui/pages/instance/ExternalResourcesPage.cpp
     ui/pages/instance/ExternalResourcesPage.h
     ui/pages/instance/GameOptionsPage.cpp
@@ -951,7 +956,7 @@ SET(LAUNCHER_SOURCES
     ui/pages/instance/ServerPingTask.cpp
     ui/pages/instance/ServerPingTask.h
 
-    # GUI - global settings pages
+#GUI - global settings pages
     ui/pages/global/AccountListPage.cpp
     ui/pages/global/AccountListPage.h
     ui/pages/global/ExternalToolsPage.cpp
@@ -969,7 +974,7 @@ SET(LAUNCHER_SOURCES
     ui/pages/global/APIPage.cpp
     ui/pages/global/APIPage.h
 
-    # GUI - platform pages
+#GUI - platform pages
     ui/pages/modplatform/CustomPage.cpp
     ui/pages/modplatform/CustomPage.h
 
@@ -986,7 +991,7 @@ SET(LAUNCHER_SOURCES
     ui/pages/modplatform/ResourcePackPage.cpp
     ui/pages/modplatform/ResourcePackModel.cpp
 
-    # Needed for MOC to find them without a corresponding .cpp
+#Needed for MOC to find them without a corresponding.cpp
     ui/pages/modplatform/TexturePackPage.h
     ui/pages/modplatform/TexturePackModel.cpp
 
@@ -1049,7 +1054,7 @@ SET(LAUNCHER_SOURCES
     ui/pages/modplatform/modrinth/ModrinthResourcePages.cpp
     ui/pages/modplatform/modrinth/ModrinthResourcePages.h
 
-    # GUI - dialogs
+#GUI - dialogs
     ui/dialogs/AboutDialog.cpp
     ui/dialogs/AboutDialog.h
     ui/dialogs/ProfileSelectDialog.cpp
@@ -1113,7 +1118,7 @@ SET(LAUNCHER_SOURCES
     ui/dialogs/skins/draw/BoxGeometry.h
     ui/dialogs/skins/draw/BoxGeometry.cpp
 
-    # GUI - widgets
+#GUI - widgets
     ui/widgets/CheckComboBox.cpp
     ui/widgets/CheckComboBox.h
     ui/widgets/Common.cpp
@@ -1164,7 +1169,7 @@ SET(LAUNCHER_SOURCES
     ui/widgets/JavaSettingsWidget.h
     ui/widgets/JavaSettingsWidget.cpp
 
-    # GUI - instance group view
+#GUI - instance group view
     ui/instanceview/InstanceProxyModel.cpp
     ui/instanceview/InstanceProxyModel.h
     ui/instanceview/AccessibleInstanceView.cpp
@@ -1296,7 +1301,7 @@ endif()
 
 include(CompilerWarnings)
 
-# Add executable
+#Add executable
 add_library(Launcher_logic STATIC ${LOGIC_SOURCES} ${LAUNCHER_SOURCES} ${LAUNCHER_UI} ${LAUNCHER_RESOURCES})
 set_project_warnings(Launcher_logic
     "${Launcher_MSVC_WARNINGS}"
@@ -1392,7 +1397,7 @@ install(TARGETS ${Launcher_Name}
 )
 
 if(Launcher_BUILD_UPDATER)
-    # Updater
+#Updater
     add_library(prism_updater_logic STATIC ${PRISMUPDATER_SOURCES} ${TASKS_SOURCES} ${PRISMUPDATER_UI})
     target_include_directories(prism_updater_logic PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
     target_link_libraries(prism_updater_logic
@@ -1427,7 +1432,7 @@ if(Launcher_BUILD_UPDATER)
 endif()
 
 if(WIN32 OR (DEFINED Launcher_BUILD_FILELINKER AND Launcher_BUILD_FILELINKER))
-    # File link
+#File link
     add_library(filelink_logic STATIC ${LINKEXE_SOURCES})
     set_project_warnings(filelink_logic
     "${Launcher_MSVC_WARNINGS}"
@@ -1441,7 +1446,7 @@ if(WIN32 OR (DEFINED Launcher_BUILD_FILELINKER AND Launcher_BUILD_FILELINKER))
         Qt${QT_VERSION_MAJOR}::Widgets
         Qt${QT_VERSION_MAJOR}::Core
         Qt${QT_VERSION_MAJOR}::Network
-        # Qt${QT_VERSION_MAJOR}::Concurrent
+# Qt${QT_VERSION_MAJOR}::Concurrent
         ${Launcher_QT_LIBS}
     )
 
@@ -1466,30 +1471,57 @@ if(WIN32 OR (DEFINED Launcher_BUILD_FILELINKER AND Launcher_BUILD_FILELINKER))
     )
 endif()
 
+#Modpack CLI tool
+add_library(modpack_cli_logic STATIC ${MODPACKCLI_SOURCES})
+target_include_directories(modpack_cli_logic PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(modpack_cli_logic
+    BuildConfig
+    Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Network
+)
+
+add_executable("${Launcher_Name}_modpack" modpackcli/modpack_cli_main.cpp)
+target_link_libraries("${Launcher_Name}_modpack" modpack_cli_logic)
+
+if(DEFINED Launcher_APP_BINARY_NAME)
+    set_target_properties("${Launcher_Name}_modpack" PROPERTIES OUTPUT_NAME "${Launcher_APP_BINARY_NAME}_modpack")
+endif()
+if(DEFINED Launcher_BINARY_RPATH)
+    SET_TARGET_PROPERTIES("${Launcher_Name}_modpack" PROPERTIES INSTALL_RPATH "${Launcher_BINARY_RPATH}")
+endif()
+
+install(TARGETS "${Launcher_Name}_modpack"
+    BUNDLE DESTINATION "." COMPONENT Runtime
+    LIBRARY DESTINATION ${LIBRARY_DEST_DIR} COMPONENT Runtime
+    RUNTIME DESTINATION ${BINARY_DEST_DIR} COMPONENT Runtime
+    FRAMEWORK DESTINATION ${FRAMEWORK_DEST_DIR} COMPONENT Runtime
+)
+
 if (UNIX AND APPLE AND Launcher_ENABLE_UPDATER)
-    # Add Sparkle updater
-    # It has to be copied here instead of just allowing fixup_bundle to install it, otherwise essential parts of
-    # the framework aren't installed
+#Add Sparkle updater
+#It has to be copied here instead of just allowing fixup_bundle to install it, otherwise essential parts of
+#the framework aren't installed
     install(DIRECTORY ${MACOSX_SPARKLE_DIR}/Sparkle.framework DESTINATION ${FRAMEWORK_DEST_DIR} USE_SOURCE_PERMISSIONS)
 endif()
 
 #### The bundle mess! ####
-# Bundle utilities are used to complete the portable packages - they add all the libraries that would otherwise be missing on the target system.
-# NOTE: it seems that this absolutely has to be here, and nowhere else.
+#Bundle utilities are used to complete the portable packages - \
+    they add all the libraries that would otherwise be missing on the target system.
+#NOTE : it seems that this absolutely has to be here, and nowhere else.
 if(INSTALL_BUNDLE STREQUAL "full")
-    # Add qt.conf - this makes Qt stop looking for things outside the bundle
+#Add qt.conf - this makes Qt stop looking for things outside the bundle
     install(
         CODE "file(WRITE \"\${CMAKE_INSTALL_PREFIX}/${RESOURCES_DEST_DIR}/qt.conf\" \" \")"
         COMPONENT Runtime
     )
-    # add qtlogging.ini as a config file
+#add qtlogging.ini as a config file
     install(
         FILES "qtlogging.ini"
         DESTINATION ${CMAKE_INSTALL_PREFIX}/${RESOURCES_DEST_DIR}
         COMPONENT Runtime
     )
-    # Bundle plugins
-    # Image formats
+#Bundle plugins
+#Image formats
     install(
         DIRECTORY "${QT_PLUGINS_DIR}/imageformats"
         CONFIGURATIONS Debug RelWithDebInfo ""
@@ -1507,7 +1539,7 @@ if(INSTALL_BUNDLE STREQUAL "full")
         REGEX "_debug\\." EXCLUDE
         REGEX "\\.dSYM" EXCLUDE
     )
-    # Icon engines
+#Icon engines
     install(
         DIRECTORY "${QT_PLUGINS_DIR}/iconengines"
         CONFIGURATIONS Debug RelWithDebInfo ""
@@ -1525,7 +1557,7 @@ if(INSTALL_BUNDLE STREQUAL "full")
         REGEX "_debug\\." EXCLUDE
         REGEX "\\.dSYM" EXCLUDE
     )
-    # Platform plugins
+#Platform plugins
     install(
         DIRECTORY "${QT_PLUGINS_DIR}/platforms"
         CONFIGURATIONS Debug RelWithDebInfo ""
@@ -1543,7 +1575,7 @@ if(INSTALL_BUNDLE STREQUAL "full")
         REGEX "_debug\\." EXCLUDE
         REGEX "\\.dSYM" EXCLUDE
     )
-    # Style plugins
+#Style plugins
     if(EXISTS "${QT_PLUGINS_DIR}/styles")
         install(
             DIRECTORY "${QT_PLUGINS_DIR}/styles"
@@ -1561,7 +1593,7 @@ if(INSTALL_BUNDLE STREQUAL "full")
             REGEX "\\.dSYM" EXCLUDE
         )
     endif()
-    # TLS plugins (Qt 6 only)
+#TLS plugins(Qt 6 only)
     if(EXISTS "${QT_PLUGINS_DIR}/tls")
         install(
             DIRECTORY "${QT_PLUGINS_DIR}/tls"
@@ -1581,7 +1613,7 @@ if(INSTALL_BUNDLE STREQUAL "full")
             PATTERN "*qcertonlybackend*" EXCLUDE
         )
     endif()
-    # Wayland support
+#Wayland support
     if(EXISTS "${QT_PLUGINS_DIR}/wayland-graphics-integration-client")
         install(
             DIRECTORY "${QT_PLUGINS_DIR}/wayland-graphics-integration-client"
