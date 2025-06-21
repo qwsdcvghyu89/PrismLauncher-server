@@ -1317,7 +1317,8 @@ target_link_libraries(Launcher_logic
     tomlplusplus::tomlplusplus
     qdcss
     BuildConfig
-    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${
+    QT_VERSION_MAJOR}::Widgets
     qrcodegenerator
 )
 
@@ -1328,14 +1329,22 @@ if (UNIX AND NOT CYGWIN AND NOT APPLE)
 endif()
 
 target_link_libraries(Launcher_logic
-    Qt${QT_VERSION_MAJOR}::Core
-    Qt${QT_VERSION_MAJOR}::Xml
-    Qt${QT_VERSION_MAJOR}::Network
-    Qt${QT_VERSION_MAJOR}::Concurrent
-    Qt${QT_VERSION_MAJOR}::Gui
-    Qt${QT_VERSION_MAJOR}::Widgets
-    Qt${QT_VERSION_MAJOR}::NetworkAuth
-    Qt${QT_VERSION_MAJOR}::OpenGL
+    Qt${
+    QT_VERSION_MAJOR}::Core
+    Qt${
+    QT_VERSION_MAJOR}::Xml
+    Qt${
+    QT_VERSION_MAJOR}::Network
+    Qt${
+    QT_VERSION_MAJOR}::Concurrent
+    Qt${
+    QT_VERSION_MAJOR}::Gui
+    Qt${
+    QT_VERSION_MAJOR}::Widgets
+    Qt${
+    QT_VERSION_MAJOR}::NetworkAuth
+    Qt${
+    QT_VERSION_MAJOR}::OpenGL
     ${Launcher_QT_DBUS}
     ${Launcher_QT_LIBS}
 )
@@ -1405,9 +1414,12 @@ if(Launcher_BUILD_UPDATER)
         ${ZLIB_LIBRARIES}
         systeminfo
         BuildConfig
-        Qt${QT_VERSION_MAJOR}::Widgets
-        Qt${QT_VERSION_MAJOR}::Core
-        Qt${QT_VERSION_MAJOR}::Network
+        Qt${
+    QT_VERSION_MAJOR}::Widgets
+        Qt${
+    QT_VERSION_MAJOR}::Core
+        Qt${
+    QT_VERSION_MAJOR}::Network
         ${Launcher_QT_LIBS}
         cmark::cmark
     )
@@ -1447,6 +1459,7 @@ if(WIN32 OR (DEFINED Launcher_BUILD_FILELINKER AND Launcher_BUILD_FILELINKER))
         Qt${QT_VERSION_MAJOR}::Core
         Qt${QT_VERSION_MAJOR}::Network
 # Qt${QT_VERSION_MAJOR}::Concurrent
+
         ${Launcher_QT_LIBS}
     )
 
@@ -1478,6 +1491,7 @@ target_link_libraries(modpack_cli_logic
     BuildConfig
     Qt${QT_VERSION_MAJOR}::Core
     Qt${QT_VERSION_MAJOR}::Network
+
 )
 
 add_executable("${Launcher_Name}_modpack" modpackcli/modpack_cli_main.cpp)
