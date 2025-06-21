@@ -1455,13 +1455,11 @@ if(WIN32 OR (DEFINED Launcher_BUILD_FILELINKER AND Launcher_BUILD_FILELINKER))
     target_link_libraries(filelink_logic
         systeminfo
         BuildConfig
-        Qt${
-    QT_VERSION_MAJOR}::Widgets
-        Qt${
-    QT_VERSION_MAJOR}::Core
-        Qt${
-    QT_VERSION_MAJOR}::Network
-#Qt${ QT_VERSION_MAJOR } ::Concurrent
+        Qt${QT_VERSION_MAJOR}::Widgets
+        Qt${QT_VERSION_MAJOR}::Core
+        Qt${QT_VERSION_MAJOR}::Network
+# Qt${QT_VERSION_MAJOR}::Concurrent
+
         ${Launcher_QT_LIBS}
     )
 
@@ -1491,10 +1489,9 @@ add_library(modpack_cli_logic STATIC ${MODPACKCLI_SOURCES})
 target_include_directories(modpack_cli_logic PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(modpack_cli_logic
     BuildConfig
-    Qt${
-    QT_VERSION_MAJOR}::Core
-    Qt${
-    QT_VERSION_MAJOR}::Network
+    Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Network
+
 )
 
 add_executable("${Launcher_Name}_modpack" modpackcli/modpack_cli_main.cpp)
